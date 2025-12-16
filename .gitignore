@@ -1,39 +1,33 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
+*.pyc
+*.pyo
+*.pyd
 .Python
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
 *.egg-info/
-.installed.cfg
+.eggs/
 *.egg
-MANIFEST
-
-# Virtual Environments
 .venv/
 venv/
 env/
 ENV/
-env.bak/
-venv.bak/
 
 # Database
 *.db
 *.sqlite
 *.sqlite3
+
+# Папка с изображениями - сохраняем ТОЛЬКО картинки
+data/images/*
+!data/images/*.jpg
+!data/images/*.jpeg
+!data/images/*.png
+!data/images/*.gif
+!data/images/*.bmp
+!data/images/*.webp
 
 # IDE
 .vscode/
@@ -42,59 +36,88 @@ venv.bak/
 *.swo
 *~
 
-# OS
+# OS файлы
 .DS_Store
 .DS_Store?
 ._*
-.Spotlight-V100
 .Trashes
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Project specific
-data/images/  # если не хотите коммитить изображения
-!data/images/.gitkeep  # но оставить папку
-
-# Логи и кэш
+# Логи
 *.log
-.cache/
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-.nox/
+*.log.*
 
-# Конфигурации
+# Временные файлы
+*.tmp
+*.temp
+.tmp/
+temp/
+tmp/
+
+# Конфигурации с секретами
 .env
 .env.local
 .env.*.local
 secrets.ini
 config.local.py
 
-# Временные файлы
-temp/
-tmp/
-*.tmp
-*.temp
-
-# Jupyter Notebook
-.ipynb_checkpoints
+# Jupyter
+.ipynb_checkpoints/
 
 # PyCharm
 .idea/
 
 # VS Code
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
 
-# mypy
+# MyPy
 .mypy_cache/
 .dmypy.json
 dmypy.json
 
-# Pyre type checker
+# Coverage
+.coverage
+htmlcov/
+.coverage.*
+
+# Pytest
+.pytest_cache/
+.mypy_cache/
+
+# Pyre
 .pyre/
+
+# Poetry
+poetry.lock
+
+# Все возможные варианты Sphinx билда
+**/_build/
+**/.doctrees/
+_build*/
+.spinx*/
+.sphinx*/
+
+# Но исключите важные папки если нужно
+!docs/_static/.gitkeep
+!docs/_templates/.gitkeep
+
+# Временные файлы сборки
+*.aux
+*.bbl
+*.blg
+*.idx
+*.ilg
+*.ind
+*.lof
+*.lot
+*.out
+*.toc
+*.xdy
+*.fls
+*.fdb_latexmk
